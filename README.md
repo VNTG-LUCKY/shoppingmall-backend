@@ -14,8 +14,10 @@ npm install
 `server` 폴더에 `.env` 파일을 생성하고 다음 내용을 추가하세요:
 
 ```env
-# MongoDB 연결 URI
-MONGODB_URI=mongodb://localhost:27017/shoping-mall
+# MongoDB 연결 URI (Atlas 또는 로컬)
+MONGODB_ATLAS_URL=mongodb+srv://username:password@cluster.mongodb.net/database
+# 또는 로컬 MongoDB
+# MONGODB_ATLAS_URL=mongodb://localhost:27017/shoping-mall
 
 # 서버 포트
 PORT=5000
@@ -40,10 +42,20 @@ npm start
 
 ## 환경 변수
 
-- `MONGODB_URI`: MongoDB 연결 URI (기본값: mongodb://localhost:27017/shoping-mall)
+- `MONGODB_ATLAS_URL`: MongoDB 연결 URI (Atlas 또는 로컬, 기본값: mongodb://localhost:27017/shoping-mall)
 - `PORT`: 서버 포트 (기본값: 5000)
 - `JWT_SECRET`: JWT 토큰 서명용 비밀키 (기본값: your-secret-key-change-in-production)
 - `JWT_EXPIRE`: JWT 토큰 만료 시간 (기본값: 7d)
+
+## Cloudtype 배포
+
+1. GitHub 저장소에 코드를 푸시합니다.
+2. Cloudtype에서 새 프로젝트를 생성하고 GitHub 저장소를 연결합니다.
+3. 환경 변수를 설정합니다:
+   - `MONGODB_ATLAS_URL`: MongoDB Atlas 연결 문자열
+   - `JWT_SECRET`: 강력한 비밀키 (랜덤 문자열 생성 권장)
+   - `PORT`: Cloudtype에서 자동으로 할당 (설정 불필요)
+4. 빌드 및 배포를 실행합니다.
 
 ## 프로젝트 구조
 
