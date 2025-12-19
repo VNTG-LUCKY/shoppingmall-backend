@@ -1,0 +1,9 @@
+# Cloudtype 배포 설정
+build:
+  type: dockerfile
+  dockerfile: Dockerfile
+
+deploy:
+  start: node index.js
+  port: 5000
+

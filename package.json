@@ -9,7 +9,7 @@
     "dev": "nodemon",
     "dev:watch": "nodemon --watch routes --watch controllers --watch models --watch config"
   },
-  "keywords": [],
+  "keywords": ["express", "nodejs", "backend", "api", "mongodb"],
   "author": "",
   "license": "ISC",
   "dependencies": {
